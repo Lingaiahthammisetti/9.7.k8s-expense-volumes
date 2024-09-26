@@ -8,9 +8,9 @@ metadata:
 spec:
   clusterIP: None #this is called headless service, headless means no IP address.
   selector:
-      component: mysql
-      project: expense
-      tier: db
+    component: mysql
+    project: expense
+    tier: db
   ports:
   - protocol: TCP
     port: 3306 #service-port
@@ -24,9 +24,9 @@ metadata:
   namespace: expense
 spec:
   selector:
-      component: mysql
-      project: expense
-      tier: db
+    component: mysql
+    project: expense
+    tier: db
   ports:
   - protocol: TCP
     port: 3306 #service-port
@@ -50,21 +50,21 @@ spec:
   replicas: 2 # by default is 1
   template:
     metadata:
-     labels:
+      labels:
      # has to match .spec.selector.matchLabels
-       component: mysql
-       project: expense
-       tier: db
+        component: mysql
+        project: expense
+        tier: db
     spec:
-       containers:
-       - name: mysql
-         image: joindevops/mysql:v1.0      #lingadevops/mysql:v1.0
-         imagePullPolicy: always
-         volumeMounts:
-         - name: mysql
-           mountPath: /var/lib/mysql
+      containers:
+      - name: mysql
+        image: joindevops/mysql:v1.0      #lingadevops/mysql:v1.0
+        imagePullPolicy: always
+        volumeMounts:
+        - name: mysql
+          mountPath: /var/lib/mysql
     #PVC declaration, it is mandatory
-    VolumeClaimTemplates:
+    volumeClaimTemplates:
     - metadata:
         name: mysql
       spec:
