@@ -59,20 +59,20 @@ spec:
       containers:
       - name: mysql
         image: joindevops/mysql:v1.0      #lingadevops/mysql:v1.0
-        imagePullPolicy: always
+        imagePullPolicy: Always
         volumeMounts:
         - name: mysql
           mountPath: /var/lib/mysql
     #PVC declaration, it is mandatory
-    volumeClaimTemplates:
-    - metadata:
-        name: mysql
-      spec:
-        accessModes: [ "ReadWriteOnce" ]
-        storageClassName: "expense-ebs"
-        resources:
-          requests:
-            storage: 1G
+  volumeClaimTemplates:
+  - metadata:
+      name: mysql
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "expense-ebs"
+      resources:
+        requests:
+          storage: 1G
            
 
 
