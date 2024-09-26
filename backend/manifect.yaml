@@ -4,7 +4,7 @@ metadata:
   name: backend
   namespace: expense
 data:
-  #DB_HOST: mysql # mysql component service name
+  DB_HOST: mysql # mysql component service name
 
 ---
 apiVersion: apps/v1
@@ -16,7 +16,7 @@ metadata:
   labels:
     component: backend
     project: expense
-    tier: db
+    tier: app
 spec:
   replicas: 2
   selector:
@@ -51,6 +51,6 @@ spec:
       tier: app
   ports:
   - protocol: TCP
-    port: 3306 #service-port
-    targetPort: 3306 #target-port
+    port: 8080 #service-port
+    targetPort: 8080 #target-port
            

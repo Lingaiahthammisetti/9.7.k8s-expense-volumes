@@ -6,7 +6,7 @@ metadata:
   name: mysql-headless
   namespace: expense
 spec:
-  clusterIP: None #this is called headless service
+  clusterIP: None #this is called headless service, headless means no IP address.
   selector:
       component: mysql
       project: expense
@@ -58,7 +58,7 @@ spec:
     spec:
        containers:
        - name: mysql
-         image: lingadevops/mysql:v1.0
+         image: joindevops/mysql:v1.0      #lingadevops/mysql:v1.0
          imagePullPolicy: always
          volumeMounts:
          - name: mysql
