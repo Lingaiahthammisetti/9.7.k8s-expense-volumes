@@ -1,4 +1,4 @@
-
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -62,7 +62,7 @@ spec:
         volumeMounts:
         - name: mysql
           mountPath: /var/lib/mysql
-  #PVC declaration, it is mandatory
+  #PVC declaration, it is mandatory, each pod requires its own mvolume
   volumeClaimTemplates:
   - metadata:
       name: mysql
