@@ -61,7 +61,7 @@ spec:
         volumeMounts:
         - name: mysql
           mountPath: /var/lib/mysql
-  #PVC declaration, it is mandatory, each pod requires its own mvolume
+  #PVC declaration, it is mandatory, each pod requires its own volume
   volumeClaimTemplates:
   - metadata:
       name: mysql
@@ -71,6 +71,8 @@ spec:
       resources:
         requests:
           storage: 1G
+
+#We are using ebc dynamic provision, it requires storage class.
 
           
 
