@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: lingadevops/backend:v1.2
+        image: lingadevops/backend:v1.1
         envFrom:
         - configMapRef:
             name: backend
