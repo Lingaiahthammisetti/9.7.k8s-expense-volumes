@@ -26,5 +26,9 @@ kubectl delete pods --all -n your-namespace
 ```
 
 # How to test or debug mysql data using Debug pod
+```
 kubectl exec -it debug -n expense -- /bin/bash
+``
+``
 mysql -h mysql -u root -pExpenseApp@1
+```

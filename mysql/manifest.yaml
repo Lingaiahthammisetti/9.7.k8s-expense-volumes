@@ -39,8 +39,7 @@ metadata:
   namespace: expense
 spec:
   selector:
-    matchLabels:
-      #has to match .spec.template.metadata.labels
+    matchLabels: #has to match .spec.template.metadata.labels      
       component: mysql
       project: expense
       tier: db
@@ -48,8 +47,7 @@ spec:
   replicas: 2 # by default is 1
   template:
     metadata:
-      labels:
-        #has to match .spec.selector.matchLabels
+      labels: #has to match .spec.selector.matchLabels
         component: mysql
         project: expense
         tier: db
@@ -67,12 +65,12 @@ spec:
       name: mysql
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: "expense-ebs-sc"
+      storageClassName: "expense-ebs-sc" #ebc dynamic provision, it requires storage class.
       resources:
         requests:
           storage: 1G
 
-#We are using ebc dynamic provision, it requires storage class.
+
 
           
 
