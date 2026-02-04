@@ -45,21 +45,28 @@ ps -ef
 netstat -tlnp
 ```
 
-
-
-* General Kubernetes Basics (must-know)
+# General Kubernetes Basics (must-know)
 
 # List pods
-kubectl get pods -n <namespace>
+```
+kubectl get pods -n expense
+```
 
 # Describe pod (events, errors)
-kubectl describe pod <pod-name> -n <namespace>
+```
+kubectl describe pod <pod-name> -n expense
+```
 
 # Pod logs
-kubectl logs <pod-name> -n <namespace>
+```
+kubectl logs <pod-name> -n expense
+```
 
 # Exec into pod
-kubectl exec -it <pod-name> -n <namespace> -- /bin/bash
+```
+kubectl exec -it <pod-name> -n expense -- /bin/bash
+```
+
 
 
 
