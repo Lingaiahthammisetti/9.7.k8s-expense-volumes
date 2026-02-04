@@ -68,7 +68,7 @@ kubectl exec -it <pod-name> -n expense -- /bin/bash
 ```
 
 
-
+# MYSQL – Kubernetes Way
 
 1️⃣ Check MySQL pod is running
 ```
@@ -127,8 +127,9 @@ use transactions;
 ```
 show tables;
 ```
-=========================================
-🔹 BACKEND – Kubernetes Way
+
+# BACKEND – Kubernetes Way
+
 1️⃣ Check backend pod
 ```
 kubectl get pods -n expense
@@ -169,7 +170,7 @@ kubectl exec -it backend-pod -n expense -- ping -c3 MySQL
 ```
 
 
-🔹 FRONTEND – Kubernetes Way
+# FRONTEND – Kubernetes Way
 1️⃣ Check frontend pod
 ```
 kubectl get pods -n expense
